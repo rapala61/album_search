@@ -1,0 +1,17 @@
+<h1>search Mapple's databases!</h1>
+
+<%= form_tag '/results', method: :post do %>
+  <%= label_tag 'Enter search term' %>
+  <%= text_field_tag 'search[query]'%>
+  <!-- <%=
+    select_tag 'search[entity]',
+    options_for_select(
+    [
+      ['Album', 'album'],
+      ['Artist', 'musicArtist'],
+      ['Music video', 'musicVideo'],
+      ['Podcast', 'podcast']
+    ])
+  %> -->
+  <%= submit_tag "Search" %>
+<% end %>

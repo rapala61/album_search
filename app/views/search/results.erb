@@ -1,0 +1,23 @@
+<h2>Results:</h2>
+<ul id="search-results">
+
+  <% if @results['results'].empty? %>
+    <h3>No results found</h3>
+  <% end %>
+
+  <% @results['results'].each do |result| %>
+
+  <li class="result">
+    <a href="<%= result["artistViewUrl"] %>" class="title"><%= result["artistName"] %></a>
+    <a href="<%= result["collectionViewUrl"] %>" class="title"><%= result["collectionName"] %></a>
+
+    <!-- <% if result["Poster"] == 'N/A' %> -->
+      <!-- <img src="https://placeholdit.imgix.net/~text?txtsize=22&txt=not+available&w=150&h=200" alt="<%= result["Title"] %>" /> -->
+    <!-- <% else %> -->
+      <img src="<%= result["artworkUrl100"] %>" alt="<%= result["artistName"] %>" />
+    <!-- <% end %> -->
+  </li>
+  <% end %>
+
+
+</ul>
